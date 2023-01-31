@@ -4,12 +4,13 @@
 1. git clone https://github.com/trading-developer/gentree_test
 2. cd gentree_test && cd dockers
 3. make init
-4. make gophp - переходим в php контейнер
 ```
 
 ## Запуск скрипта
 ```
-php gentree.php -files/input.csv -files/result.json
+1. make gophp - переходим в php контейнер
+2.1 php gentree.php -files/input.csv -files/result.json -- передаем пути через аргументы
+2.2 php gentree.php -- пути нужно будет ввести в readline
 ```
 
 ## Запуск тестов
