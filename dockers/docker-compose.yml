@@ -1,0 +1,12 @@
+version: '3'
+services:
+    app-php-gentree:
+        container_name: app-php-gentree
+        build: ./images/php
+        volumes:
+            - ../app:/var/www/app
+        networks:
+            - gentree
+networks:
+    gentree:
+        driver: bridge

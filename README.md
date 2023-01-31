@@ -74,7 +74,7 @@
 
 ```
 1. git clone https://github.com/trading-developer/gentree_test
-2. cd gentree_test && cd docker 
+2. cd gentree_test && cd dockers
 3. make init
 4. make gophp - переходим в php контейнер
 ```
