@@ -1,3 +1,25 @@
+## Порядок установки
+
+```
+1. git clone https://github.com/trading-developer/gentree_test
+2. cd gentree_test && cd dockers
+3. make init
+4. make gophp - переходим в php контейнер
+```
+
+## Запуск скрипта
+```
+php gentree.php -files/input.csv -files/result.json
+```
+
+## Запуск тестов
+```
+1. cd dockers
+2. make tests
+```
+
+## Описание задачи
+
 Написать программу gentree используя PHP 8.1, генерирующую JSON файл на основе входящего CSV файла.
 
 Программа принимает в качестве параметров командной строки:
@@ -70,15 +92,3 @@
 2) Правильность выдаваемых результатов и наличие тестов.
 3) Скорость работы и потребление памяти
 
-## Порядок установки
-
-```
-1. git clone https://github.com/trading-developer/gentree_test
-2. cd gentree_test && cd dockers
-3. make init
-4. make gophp - переходим в php контейнер
-```
-## Запуск скрипта
-```
-php gentree.php -files/input.csv -files/result.json
-```
