@@ -31,6 +31,15 @@ abstract class File
         return $this->errors;
     }
 
+    /**
+     * @param string $separator
+     * @return string
+     */
+    public function getErrorsText(string $separator = "\n"): string
+    {
+        return implode($separator, $this->getErrors());
+    }
+
     abstract public function validation():bool;
     abstract public function getData():array;
 }

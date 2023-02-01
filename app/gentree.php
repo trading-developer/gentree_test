@@ -17,22 +17,27 @@ if (!file_exists($sourcesFile)) {
     die("Исходный файл не найден.\n");
 }
 
+$timeStart = microtime(true);
+
 $manager = new Manager($sourcesFile);
 
 try {
     $executor = $manager->getExecutor();
-} catch (\RuntimeException $exception) {
+} catch (RuntimeException $exception) {
     die($exception->getMessage() . "\n");
 }
 
 if (!$executor->validation()) {
-    die(implode("\n", $executor->getErrors())."\n");
+    die($executor->getErrorsText() . "\n");
 }
 
-$generator = new TreeGenerator($executor , $resultFile);
+$generator = new TreeGenerator($executor, $resultFile);
 
 if (!$generator->saveJson()) {
     die("Не удалось сохранить выгружаемый файл\n");
 }
+
+echo 'Использовано памяти: ' . (memory_get_peak_usage() / 1024 / 1024) . " MB \n";
+echo 'Время выполнения в секундах: ' . ((microtime(true) - $timeStart)) . "\n";
 
 die("Генерация завершена \n");
