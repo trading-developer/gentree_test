@@ -40,6 +40,7 @@ abstract class File
         return implode($separator, $this->getErrors());
     }
 
-    abstract public function validation():bool;
-    abstract public function getData():array;
+    abstract public function validation(): bool;
+
+    abstract public function getData(): array;
 }
